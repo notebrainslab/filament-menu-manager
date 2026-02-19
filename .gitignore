@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+composer.lock
+.phpunit.result.cache
+.DS_Store
+Thumbs.db
+
+# Keep dist/ compiled assets — consumers don't need to run npm
+# Uncomment below if you prefer consumers to build their own:
+# /resources/dist

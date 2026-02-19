@@ -1,0 +1,14 @@
+{
+    "name": "filament-menu-manager",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "node build.js"
+    },
+    "devDependencies": {
+        "esbuild": "^0.20.0"
+    },
+    "dependencies": {
+        "sortablejs": "^1.15.2"
+    }
+}
