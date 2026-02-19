@@ -1,10 +1,10 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager;
+namespace NoteBrainsLab\FilamentMenuManager;
 
-use SolutionForest\FilamentMenuManager\Models\Menu;
-use SolutionForest\FilamentMenuManager\Models\MenuLocation;
-use SolutionForest\FilamentMenuManager\Models\MenuItem;
+use NoteBrainsLab\FilamentMenuManager\Models\Menu;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuLocation;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuItem;
 
 class MenuManager
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Commands;
+namespace NoteBrainsLab\FilamentMenuManager\Commands;
 
 use Illuminate\Console\Command;
 

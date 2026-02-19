@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Pages;
+namespace NoteBrainsLab\FilamentMenuManager\Pages;
 
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
@@ -10,9 +10,9 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Support\Collection;
-use SolutionForest\FilamentMenuManager\MenuManager;
-use SolutionForest\FilamentMenuManager\Models\Menu;
-use SolutionForest\FilamentMenuManager\Models\MenuLocation;
+use NoteBrainsLab\FilamentMenuManager\MenuManager;
+use NoteBrainsLab\FilamentMenuManager\Models\Menu;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuLocation;
 
 class MenuManagerPage extends Page implements HasForms
 {

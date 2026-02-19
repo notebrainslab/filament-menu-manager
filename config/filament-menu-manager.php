@@ -30,9 +30,9 @@ return [
     | You may swap out the default models for your own extended versions.
     */
     'models' => [
-        'menu_location' => \SolutionForest\FilamentMenuManager\Models\MenuLocation::class,
-        'menu'          => \SolutionForest\FilamentMenuManager\Models\Menu::class,
-        'menu_item'     => \SolutionForest\FilamentMenuManager\Models\MenuItem::class,
+        'menu_location' => \NoteBrainsLab\FilamentMenuManager\Models\MenuLocation::class,
+        'menu'          => \NoteBrainsLab\FilamentMenuManager\Models\Menu::class,
+        'menu_item'     => \NoteBrainsLab\FilamentMenuManager\Models\MenuItem::class,
     ],
 
     /*

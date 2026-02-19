@@ -1,7 +1,7 @@
 # Filament Menu Manager
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/solutionforest/filament-menu-manager.svg?style=flat-square)](https://packagist.org/packages/solutionforest/filament-menu-manager)
-[![License](https://img.shields.io/packagist/l/solutionforest/filament-menu-manager.svg?style=flat-square)](https://packagist.org/packages/solutionforest/filament-menu-manager)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/notebrainslab/filament-menu-manager.svg?style=flat-square)](https://packagist.org/packages/notebrainslab/filament-menu-manager)
+[![License](https://img.shields.io/packagist/l/notebrainslab/filament-menu-manager.svg?style=flat-square)](https://packagist.org/packages/notebrainslab/filament-menu-manager)
 
 A powerful **Filament v4** plugin for managing navigation menus with:
 
@@ -30,7 +30,7 @@ A powerful **Filament v4** plugin for managing navigation menus with:
 ### 1. Install via Composer
 
 ```bash
-composer require solutionforest/filament-menu-manager
+composer require notebrainslab/filament-menu-manager
 ```
 
 ### 2. Publish and run migrations
@@ -45,7 +45,7 @@ php artisan migrate
 ### 3. Register the plugin in your Panel Provider
 
 ```php
-use SolutionForest\FilamentMenuManager\FilamentMenuManagerPlugin;
+use NoteBrainsLab\FilamentMenuManager\FilamentMenuManagerPlugin;
 
 public function panel(Panel $panel): Panel
 {
@@ -84,6 +84,11 @@ return [
         'sort'  => 99,
         'label' => 'Menu Manager',
     ],
+    'models' => [
+        'menu_location' => \NoteBrainsLab\FilamentMenuManager\Models\MenuLocation::class,
+        'menu'          => \NoteBrainsLab\FilamentMenuManager\Models\Menu::class,
+        'menu_item'     => \NoteBrainsLab\FilamentMenuManager\Models\MenuItem::class,
+    ],
 ];
 ```
 
@@ -108,7 +113,7 @@ FilamentMenuManagerPlugin::make()
 To make an Eloquent model selectable in the **Models panel**, add the trait:
 
 ```php
-use SolutionForest\FilamentMenuManager\Concerns\HasMenuItems;
+use NoteBrainsLab\FilamentMenuManager\Concerns\HasMenuItems;
 
 class Post extends Model
 {
@@ -135,7 +140,7 @@ FilamentMenuManagerPlugin::make()
 
 ```blade
 @php
-    $manager = app(\SolutionForest\FilamentMenuManager\MenuManager::class);
+    $manager = app(\NoteBrainsLab\FilamentMenuManager\MenuManager::class);
     $menus   = $manager->menusForLocation('primary');
     $menu    = $menus->first();
     $tree    = $menu?->getTree() ?? [];

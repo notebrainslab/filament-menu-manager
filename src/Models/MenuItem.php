@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Models;
+namespace NoteBrainsLab\FilamentMenuManager\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

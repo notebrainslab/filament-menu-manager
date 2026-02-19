@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Concerns;
+namespace NoteBrainsLab\FilamentMenuManager\Concerns;
 
 /**
  * Trait HasMenuItems

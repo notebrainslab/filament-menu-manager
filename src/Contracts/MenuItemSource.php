@@ -1,6 +1,6 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Contracts;
+namespace NoteBrainsLab\FilamentMenuManager\Contracts;
 
 interface MenuItemSource
 {

@@ -1,5 +1,5 @@
 {
-    "name": "solutionforest/filament-menu-manager",
+    "name": "notebrainslab/filament-menu-manager",
     "description": "A powerful Filament v4 plugin for managing menus with multiple locations, drag & drop reordering, Eloquent model support, auto-save, and dark theme.",
     "version": "1.0.0",
     "keywords": [
@@ -10,12 +10,12 @@
         "menu-manager",
         "filament-plugin"
     ],
-    "homepage": "https://github.com/solutionforest/filament-menu-manager",
+    "homepage": "https://github.com/notebrainslab/filament-menu-manager",
     "license": "MIT",
     "authors": [
         {
-            "name": "SolutionForest",
-            "email": "info@solutionforest.net",
+            "name": "NoteBrainsLab",
+            "email": "info@notebrainslab.com",
             "role": "Developer"
         }
     ],
@@ -33,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SolutionForest\\FilamentMenuManager\\": "src/"
+            "NoteBrainsLab\\FilamentMenuManager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SolutionForest\\FilamentMenuManager\\Tests\\": "tests/"
+            "NoteBrainsLab\\FilamentMenuManager\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -54,7 +54,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SolutionForest\\FilamentMenuManager\\FilamentMenuManagerServiceProvider"
+                "NoteBrainsLab\\FilamentMenuManager\\FilamentMenuManagerServiceProvider"
             ]
         }
     },

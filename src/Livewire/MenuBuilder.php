@@ -1,11 +1,11 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Livewire;
+namespace NoteBrainsLab\FilamentMenuManager\Livewire;
 
 use Livewire\Component;
-use SolutionForest\FilamentMenuManager\MenuManager;
-use SolutionForest\FilamentMenuManager\Models\Menu;
-use SolutionForest\FilamentMenuManager\Models\MenuItem;
+use NoteBrainsLab\FilamentMenuManager\MenuManager;
+use NoteBrainsLab\FilamentMenuManager\Models\Menu;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuItem;
 
 class MenuBuilder extends Component
 {

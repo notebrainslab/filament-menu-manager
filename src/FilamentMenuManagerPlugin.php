@@ -1,10 +1,10 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager;
+namespace NoteBrainsLab\FilamentMenuManager;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use SolutionForest\FilamentMenuManager\Pages\MenuManagerPage;
+use NoteBrainsLab\FilamentMenuManager\Pages\MenuManagerPage;
 
 class FilamentMenuManagerPlugin implements Plugin
 {

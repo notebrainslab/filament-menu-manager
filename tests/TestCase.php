@@ -1,9 +1,9 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Tests;
+namespace NoteBrainsLab\FilamentMenuManager\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use SolutionForest\FilamentMenuManager\FilamentMenuManagerServiceProvider;
+use NoteBrainsLab\FilamentMenuManager\FilamentMenuManagerServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-use SolutionForest\FilamentMenuManager\Models\Menu;
-use SolutionForest\FilamentMenuManager\Models\MenuItem;
-use SolutionForest\FilamentMenuManager\Models\MenuLocation;
-use SolutionForest\FilamentMenuManager\Tests\TestCase;
+use NoteBrainsLab\FilamentMenuManager\Models\Menu;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuItem;
+use NoteBrainsLab\FilamentMenuManager\Models\MenuLocation;
+use NoteBrainsLab\FilamentMenuManager\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager;
+namespace NoteBrainsLab\FilamentMenuManager;
 
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use SolutionForest\FilamentMenuManager\Commands\InstallCommand;
-use SolutionForest\FilamentMenuManager\Livewire\MenuBuilder;
-use SolutionForest\FilamentMenuManager\Livewire\MenuPanel;
+use NoteBrainsLab\FilamentMenuManager\Commands\InstallCommand;
+use NoteBrainsLab\FilamentMenuManager\Livewire\MenuBuilder;
+use NoteBrainsLab\FilamentMenuManager\Livewire\MenuPanel;
 
 class FilamentMenuManagerServiceProvider extends PackageServiceProvider
 {
@@ -52,6 +52,6 @@ class FilamentMenuManagerServiceProvider extends PackageServiceProvider
                 'filament-menu-manager-scripts',
                 __DIR__ . '/../resources/dist/filament-menu-manager.js'
             ),
-        ], 'solutionforest/filament-menu-manager');
+        ], 'notebrainslab/filament-menu-manager');
     }
 }

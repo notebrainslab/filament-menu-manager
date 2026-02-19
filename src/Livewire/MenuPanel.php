@@ -1,9 +1,9 @@
 <?php
 
-namespace SolutionForest\FilamentMenuManager\Livewire;
+namespace NoteBrainsLab\FilamentMenuManager\Livewire;
 
 use Livewire\Component;
-use SolutionForest\FilamentMenuManager\MenuManager;
+use NoteBrainsLab\FilamentMenuManager\MenuManager;
 
 class MenuPanel extends Component
 {
@@ -59,7 +59,7 @@ class MenuPanel extends Component
 
     public function addModelItem(string $modelClass, int $modelId): void
     {
-        /** @var \SolutionForest\FilamentMenuManager\Contracts\MenuItemSource $model */
+        /** @var \NoteBrainsLab\FilamentMenuManager\Contracts\MenuItemSource $model */
         $model = $modelClass::find($modelId);
         if (! $model) return;
 
