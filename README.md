@@ -20,8 +20,9 @@ A powerful **Filament v4** plugin for managing navigation menus with:
 | Dependency | Version |
 |---|---|
 | PHP | `^8.2` |
-| Laravel | `^11.0` or `^12.0` |
+| Laravel | `^12.0` |
 | Filament | `^4.0` |
+| Livewire | `^3.0` |
 
 ---
 
@@ -64,10 +65,16 @@ public function panel(Panel $panel): Panel
 
 ## Configuration
 
-Publish the config file:
+Publish the config file (Optional):
 
 ```bash
 php artisan vendor:publish --tag="filament-menu-manager-config"
+```
+
+Publish the resource files (Optional):
+
+```bash
+php artisan vendor:publish --tag="filament-menu-manager-views"
 ```
 
 `config/filament-menu-manager.php` options:
