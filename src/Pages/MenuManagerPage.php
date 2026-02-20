@@ -20,10 +20,11 @@ class MenuManagerPage extends Page implements HasForms
 
     protected string $view = 'filament-menu-manager::pages.menu-manager';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Content';
+    protected static \UnitEnum|string|null $navigationGroup = 'Settings';
     protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-bars-3';
     protected static ?string $navigationLabel = 'Menu Manager';
     protected static ?int $navigationSort = 99;
+    protected ?string $subheading = 'Set up location-based menus to manage navigation across your application.';
 
     public static function getNavigationGroup(): \UnitEnum|string|null
     {
