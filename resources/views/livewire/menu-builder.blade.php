@@ -34,8 +34,8 @@
             id="fmm-root-list"
             x-data="menuSortable($wire, {{ $maxDepth ?? 'null' }})"
         >
-            @forelse($items as $item)
-                @include('filament-menu-manager::components.menu-item', ['item' => $item, 'depth' => 0])
+            @forelse($items as $idx => $item)
+                @include('filament-menu-manager::components.menu-item', ['item' => $item, 'depth' => 0, 'index' => $idx])
             @empty
                 <div class="fmm-empty" style="padding:2rem 1rem;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

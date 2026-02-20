@@ -45,18 +45,41 @@
             </button>
 
             {{-- Indent (→) --}}
-            <button class="fmm-action-btn" wire:click="indentItem({{ $item['id'] }})" title="Indent (make child)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:0.875rem;height:0.875rem">
-                    <path d="M3 4.25a.75.75 0 01.75-.75h6.5a.75.75 0 010 1.5h-6.5A.75.75 0 013 4.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 14.25zm9.78-6.47a.75.75 0 011.06 0l3.25 3.25a.75.75 0 010 1.06l-3.25 3.25a.75.75 0 01-1.06-1.06l2.72-2.72-2.72-2.72a.75.75 0 010-1.06z" />
-                </svg>
-            </button>
+            @php
+                $maxDepth = config('filament-menu-manager.max_depth');
+                $canIndent = true;
+                if ($maxDepth !== null) {
+                    // Recursive helper to find max depth of this item's children
+                    $getSubtreeDepth = function($items) use (&$getSubtreeDepth) {
+                        $max = 0;
+                        foreach ($items as $item) {
+                            $d = 1 + $getSubtreeDepth($item['children'] ?? []);
+                            if ($d > $max) $max = $d;
+                        }
+                        return $max;
+                    };
+                    $subtreeDepth = $getSubtreeDepth($item['children'] ?? []);
+                    if (($depth + 1 + $subtreeDepth) > $maxDepth) {
+                        $canIndent = false;
+                    }
+                }
+            @endphp
+            @if($canIndent && $index > 0)
+                <button class="fmm-action-btn" wire:click="indentItem({{ $item['id'] }})" title="Indent (make child)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:0.875rem;height:0.875rem">
+                        <path d="M3 4.25a.75.75 0 01.75-.75h6.5a.75.75 0 010 1.5h-6.5A.75.75 0 013 4.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 14.25zm9.78-6.47a.75.75 0 011.06 0l3.25 3.25a.75.75 0 010 1.06l-3.25 3.25a.75.75 0 01-1.06-1.06l2.72-2.72-2.72-2.72a.75.75 0 010-1.06z" />
+                    </svg>
+                </button>
+            @endif
 
             {{-- Outdent (←) --}}
-            <button class="fmm-action-btn" wire:click="outdentItem({{ $item['id'] }})" title="Outdent (make parent)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:0.875rem;height:0.875rem">
-                    <path d="M3 4.25a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H3.75A.75.75 0 013 4.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 14.25zm12.78-6.47a.75.75 0 010 1.06l-2.72 2.72 2.72 2.72a.75.75 0 01-1.06 1.06l-3.25-3.25a.75.75 0 010-1.06l3.25-3.25a.75.75 0 011.06 0z" />
-                </svg>
-            </button>
+            @if($depth > 0)
+                <button class="fmm-action-btn" wire:click="outdentItem({{ $item['id'] }})" title="Outdent (make parent)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:0.875rem;height:0.875rem">
+                        <path d="M3 4.25a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H3.75A.75.75 0 013 4.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.25zm0 5a.75.75 0 01.75-.75H7.5a.75.75 0 010 1.5H3.75A.75.75 0 013 14.25zm12.78-6.47a.75.75 0 010 1.06l-2.72 2.72 2.72 2.72a.75.75 0 01-1.06 1.06l-3.25-3.25a.75.75 0 010-1.06l3.25-3.25a.75.75 0 011.06 0z" />
+                    </svg>
+                </button>
+            @endif
 
             {{-- Toggle visibility --}}
             <button class="fmm-action-btn" wire:click="toggleEnabled({{ $item['id'] }})" title="{{ $item['enabled'] ? 'Disable' : 'Enable' }}">
@@ -132,8 +155,8 @@
     {{-- Children (recursive) --}}
     @if(!empty($item['children']))
         <div class="fmm-nested-list fmm-nested-sortable" x-data="menuSortable($wire, {{ config('filament-menu-manager.max_depth') ?? 'null' }})">
-            @foreach($item['children'] as $child)
-                @include('filament-menu-manager::components.menu-item', ['item' => $child, 'depth' => $depth + 1])
+            @foreach($item['children'] as $childIdx => $child)
+                @include('filament-menu-manager::components.menu-item', ['item' => $child, 'depth' => $depth + 1, 'index' => $childIdx])
             @endforeach
         </div>
     @else
