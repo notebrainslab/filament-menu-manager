@@ -54,8 +54,8 @@ public function panel(Panel $panel): Panel
         ->plugin(
             FilamentMenuManagerPlugin::make()
                 ->locations([
-                    'primary' => 'Primary Navigation',
-                    'footer'  => 'Footer Links',
+                    'primary' => 'Primary',
+                    'footer'  => 'Footer',
                 ])
         );
 }
