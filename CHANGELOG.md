@@ -2,6 +2,11 @@
 
 All notable changes to `filament-menu-manager` will be documented in this file.
 
+## [2.0.1] — 2026-02-23
+
+### Fixed
+- **Livewire Component Discovery** — Fixed an issue throwing a `ComponentNotFoundException` in Livewire v4.1 by replacing the `::` namespace alias with dot notation (`.`) for component names.
+
 ## [2.0.0] — 2026-02-21
 
 ### Added
