@@ -2,17 +2,6 @@
 
 All notable changes to `filament-menu-manager` will be documented in this file.
 
-## [2.0.1] — 2026-02-23
-
-### Fixed
-- **Livewire Component Discovery** — Fixed an issue throwing a `ComponentNotFoundException` in Livewire v4.1 by replacing the `::` namespace alias with dot notation (`.`) for component names.
-
-## [2.0.0] — 2026-02-21
-
-### Added
-- **Filament v5 Support** — Added compatibility with the newly released Filament v5 core while maintaining full support for v4.
-- **Livewire v4 Support** — Added compatibility with Livewire v4 to ensure smooth integration with the latest Laravel environments.
-
 ## [1.0.0] — 2024-02-19
 
 ### Added
@@ -32,3 +21,6 @@ All notable changes to `filament-menu-manager` will be documented in this file.
 - **Install Command** — `php artisan filament-menu-manager:install` publishes config/migrations and optionally runs migrations.
 - **Configurable Models** — All three models (`MenuLocation`, `Menu`, `MenuItem`) can be swapped out via config for your own extended versions.
 - **Pest Test Suite** — 6 passing tests covering location creation, uniqueness, relationships, tree building, URL resolution, and enabled toggling.
+- **Filament v5 Support** — Added compatibility with the newly released Filament v5 core while maintaining full support for v4.
+- **Livewire v4 Support** — Added compatibility with Livewire v4 to ensure smooth integration with the latest Laravel environments.
+- **Livewire Component Discovery** — Fixed an issue throwing a `ComponentNotFoundException` in Livewire v4.1 by replacing the `::` namespace alias with dot notation (`.`) for component names.
